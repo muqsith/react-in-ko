@@ -1,15 +1,14 @@
 import employeesListComponent from '../components/employees-list.ko';
 
-class EmployeeList {
-
-    constructor(params) {
-        this.firstName = params.firstName;
+class EmployeesList {
+    constructor() {
     }
-
 }
 
 
 ko.components.register('employees-list', {
     template: employeesListComponent,
-    viewModel: EmployeeList
+    viewModel: EmployeesList
 });
+
+export default EmployeesList;

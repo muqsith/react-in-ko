@@ -11,7 +11,7 @@ const WEBPACK_MODE = process.env.npm_lifecycle_event;
 
 const config = {
     entry: {
-            app: path.resolve(__dirname, 'js', 'app.js')
+            app: path.resolve(__dirname, 'js', 'index.js')
     },
     output: {
         path: path.resolve(__dirname, 'public'),

@@ -1,0 +1,4 @@
+<div class="employees-app">
+    <employees-form></employees-form>
+    <employees-list></employees-list>
+</div>

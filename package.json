@@ -36,6 +36,7 @@
   },
   "dependencies": {
     "body-parser": "^1.18.3",
+    "isomorphic-fetch": "^2.2.1",
     "react": "^16.1.1",
     "react-dom": "^16.1.1",
     "react-redux": "^5.0.6",
