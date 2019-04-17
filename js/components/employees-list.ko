@@ -1,3 +1,26 @@
 <div class="employees-list">
-    <h4>List of employees</h4>
+    <!-- ko if: app.list.data().length -->
+    <table>
+        <thead>
+            <tr>
+                <td>First Name</td>
+                <td>Last Name</td>
+                <td>Age</td>
+                <td>Update</td>
+                <td>Delete</td>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- ko foreach: app.list.data -->
+                <tr>
+                    <td data-bind="text: $data.firstName"></td>
+                    <td data-bind="text: $data.lastName"></td>
+                    <td data-bind="text: $data.age"></td>
+                    <td><button class="update-btn" data-bind="click: $parent.updateEmp.bind($parent, $data.id)">Update</button></td>
+                    <td><button class="del-btn" data-bind="click: $parent.deleteEmp.bind($parent, $data.id)">Delete</button></td>
+                </tr>
+            <!-- /ko -->
+        </tbody>
+    </table>
+    <!-- /ko -->
 </div>

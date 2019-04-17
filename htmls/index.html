@@ -11,7 +11,7 @@
     <script type='text/javascript' src='3rdparty/knockout-3.4.2.js'></script>
 
     <div id="app" class="app">
-        <employees-app></employees-app>
+        <div data-bind="component: {name: 'employees-app', params: app}"></div>
     </div>
 
 </body>

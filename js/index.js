@@ -1,6 +1,6 @@
-import '../css/koapp.css';
+import '../styles/main.less';
 
-import './viewmodels/EmployeesApp';
+import './components/EmployeesApp';
 
 
 ko.applyBindings(document.querySelector('#app'));

@@ -1,17 +1,18 @@
 <div class="employees-form">
     <div class="field-container">
         <div class="label-div"><label>First name:</label></div>
-        <div class="input-div"><input type="text" data-bind="value: firstName"/></div>
+        <div class="input-div"><input type="text" data-bind="value: app.form.firstName"/></div>
     </div>
     <div class="field-container">
         <div class="label-div"><label>Last name:</label></div>
-        <div class="input-div"><input type="text" data-bind="value: lastName"/></div>
+        <div class="input-div"><input type="text" data-bind="value: app.form.lastName"/></div>
     </div>
     <div class="field-container">
         <div class="label-div"><label>Age:</label></div>
-        <div class="input-div"><input type="number" data-bind="value: age"/></div>
+        <div class="input-div"><input type="number" data-bind="value: app.form.age"/></div>
     </div>
     <div class="button-container">
-        <button data-bind="click: submit">Save</button>
+        <button data-bind="click: saveEmployee,
+            enable: (app.form.firstName() && app.form.lastName() && app.form.age())">Save</button>
     </div>
 </div>

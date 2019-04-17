@@ -1,4 +1,4 @@
 <div class="employees-app">
-    <employees-form></employees-form>
-    <employees-list></employees-list>
+    <div data-bind="component: {name: 'employees-form', params: app}"></div>
+    <div data-bind="component: {name: 'employees-list', params: app}"></div>
 </div>

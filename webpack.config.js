@@ -21,10 +21,10 @@ const config = {
     module: {
         rules: [
             {
-                test: /\.css$/,
+                test: /\.less$/,
                 use: ExtractTextPlugin.extract({
                     fallback: "style-loader",
-                    use: ['css-loader?modules=true&localIdentName=[local]', 'postcss-loader']
+                    use: ['css-loader?modules=true&localIdentName=[local]', 'postcss-loader', 'less-loader']
                 })
             },
             {
