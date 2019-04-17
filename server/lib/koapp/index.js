@@ -19,6 +19,8 @@ function addUpdate (op, data) {
     }
 }
 
+doa.initDb();
+
 router
 .use(bodyParser.urlencoded({ extended: false }))
 .use(bodyParser.json())

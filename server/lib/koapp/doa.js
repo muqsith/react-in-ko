@@ -1,17 +1,13 @@
 const path = require('path');
+const fs = require('fs-extra');
 const sqlite3 = require('sqlite3');
 const uuidV4 = require('uuid/v4');
 
 const Employee = require('./EmployeeModel');
 
-const dbFile = path.resolve(__dirname, '..', '..', '..', 'data', 'emp.db');
-const db = new sqlite3.Database(dbFile, (err) => {
-    if (err) {
-        console.log('Failed to open database', err);
-    } else {
-        console.log('Database connection created successfully');
-    }
-});
+const dbDir = path.resolve(__dirname, '..', '..', '..', 'data');
+const dbFile = 'emp.db';
+let db = null;
 
 exports.addEmployee = function (employee) {
     return new Promise((resolve, reject) => {
@@ -81,3 +77,24 @@ exports.deleteEmployee = function (id) {
         });
     });
 };
+
+exports.initDb = function () {
+    fs.ensureDir(dbDir)
+    .then(() => {
+        let schemaExists = fs.existsSync(path.resolve(dbDir, dbFile));
+        db = new sqlite3.Database(path.resolve(dbDir, dbFile), (err) => {
+            if (err) {
+                console.log('Failed to open database', err);
+            } else {
+                console.log('Database connection created successfully');
+                if (!schemaExists) {
+                    db.serialize(function() {
+                        db.run('CREATE TABLE employees '
+                        + '(id varchar(40) primary key, firstname varchar(40), '
+                        + ' lastname varchar(40), age shortint)');
+                    });
+                }
+            }
+        });
+    })
+}
