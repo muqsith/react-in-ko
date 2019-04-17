@@ -21,7 +21,7 @@ const config = {
     module: {
         rules: [
             {
-                test: /\.less$/,
+                test: /\.(c|le)ss$/,
                 use: ExtractTextPlugin.extract({
                     fallback: "style-loader",
                     use: ['css-loader?modules=true&localIdentName=[local]', 'postcss-loader', 'less-loader']

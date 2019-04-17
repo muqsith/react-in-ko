@@ -4,9 +4,13 @@ import './EmployeesList';
 
 import Application from '../viewmodels/Application';
 
+import initReact from '../react/initReact';
+
 class EmployeesApp {
     constructor() {
         this.app = new Application();
+        // bootstrap react components
+        initReact(app);
     }
 }
 
