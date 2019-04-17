@@ -12,7 +12,7 @@ export const addEmployee = (data) => {
 };
 
 export const getEmployees = () => {
-    return fetch('/api/koapp');
+    return fetch('/api/koapp').then((response) => response.json());
 };
 
 export const updateEmployee = (data) => {

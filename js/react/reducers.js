@@ -1,8 +1,8 @@
 
-function employeesList(state=[], action) {
+function employeesList(state={data: []}, action) {
     switch (action.type) {
         case 'GET': {
-            return state;
+            return { ...state, data: action.data };
         }
         case 'UPDATE': {
             return state;

@@ -1,23 +1,14 @@
-import * as api from '../dal/transport';
+import * as storeHelper from '../react/storeHelper';
+import * as actions from '../react/actions';
 
 
 class List {
     constructor(app) {
-        this.app = app;
-        this.data = ko.observableArray();
+
     }
 
     load() {
-        return api.getEmployees()
-        .then((response) => {
-            return response.json();
-        })
-        .then((result) => {
-            this.data(result);
-        })
-        .catch((err) => {
-            console.error('Failed to load employees data', err);
-        })
+        storeHelper.getStore().dispatch(actions.getEmployees());
     }
 
 }

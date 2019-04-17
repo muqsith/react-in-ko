@@ -10,7 +10,7 @@ class EmployeesApp {
     constructor() {
         this.app = new Application();
         // bootstrap react components
-        initReact(app);
+        initReact(this.app);
     }
 }
 
