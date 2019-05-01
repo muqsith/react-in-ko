@@ -10,6 +10,9 @@ function employeesList(state={data: []}, action) {
         case 'DELETE': {
             return state;
         }
+        case 'UPDATE_LAST_NAME': {
+            return { ...state, __lastName: action.lname};
+        }
         default:
             return state;
     }

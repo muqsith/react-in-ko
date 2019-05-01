@@ -38,3 +38,10 @@ export const deleteEmployee = (employee) => {
         type: 'DELETE'
     };
 };
+
+export const updateLastName = (val) => {
+    return {
+        type: 'UPDATE_LAST_NAME',
+        lname: val
+    }
+};

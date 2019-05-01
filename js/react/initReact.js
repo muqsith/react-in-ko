@@ -10,6 +10,7 @@ const initReact = (app) => {
     storeHelper.initStore(app);
     actions.initActions(app);
     const store = storeHelper.getStore();
+    app.store = store; // redux store
     ReactDOM.render(
         <Provider store={store}>
             <ListContainer />

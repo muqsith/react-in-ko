@@ -1,4 +1,5 @@
 import * as api from '../dal/transport';
+import { updateLastName } from '../react/actions'
 
 class Form {
     constructor(app) {
@@ -10,6 +11,9 @@ class Form {
 
         this.addEmployee = this.addEmployee.bind(this);
         this.clearForm = this.clearForm.bind(this);
+        this.lastName.subscribe((value) => {
+            this.app.store.dispatch(updateLastName(value));
+        });
     }
 
     clearForm() {

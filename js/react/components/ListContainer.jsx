@@ -18,6 +18,7 @@ class List extends React.Component {
                 <h2>Rendered with react</h2>
                 {
                     (Array.isArray(this.props.data) && this.props.data.length) ?
+                        <div>
                         <table>
                         <thead>
                             <tr>
@@ -47,7 +48,9 @@ class List extends React.Component {
                                 })
                             }
                         </tbody>
-                    </table> : null
+                    </table>
+                    <span>{this.props.__lastName}</span>
+                    </div> : null
                 }
             </div>
         )
