@@ -15,7 +15,7 @@ const config = {
     },
     output: {
         path: path.resolve(__dirname, 'public'),
-        filename: '[name].[hash].js'
+        filename:  'bundle.js'// '[name].[hash].js'
     },
     devtool: (WEBPACK_MODE === 'build') ? false : 'source-map',
     module: {
